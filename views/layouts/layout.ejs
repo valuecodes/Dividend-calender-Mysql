@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dividend calender</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    
+    <div class="header">
+        <h1 id="mainHeader">Dividend calender</h1>
+        <div id="searchBar">
+            <id id="navBar">
+                <button href="test" id="saveButton" class="myPortFolios" onclick="getCurrentPortfolio()">Saved</button>
+                <button class="otherPortfolios" onclick="getOriginal()">Restore original</button>
+                <button class="search Dividends" onclick="clearPortfolio()">Clear all</button>
+                <input type="text" id='myPortfolio' placeholder="Name your portfolio" value='Juha salkku'>
+                 <button onclick="createNewPortfolio()">Create new portfolio</button>
+            </id>
+            <div id="searchBox">
+                <input type="text" id="search" placeholder="Add tickers" autocomplete="off" >
+                <div id="result">
+                    
+                </div>
+            </div>
+            <div id="navData">
+                <h2 id="ctext">Next dividend in: </h2>
+                <div id="countDown"></div>
+                <h2>Days</h2>
+                <h2 id="nextAmount"></h2>
+            </div>
+        </div>
+    </div>
+    <div id="mainSection">
+        <div id="activeList">
+            <div id="activeNav">
+                <h3 id="closed"></h3>
+                <span class="openActive">
+                    <a href="#"  onclick="openActiveMenu()" >
+                        <svg class="svg" width='30' height='30'>
+                            <path d='M0,5 30,5' stroke='rgb(231, 240, 241)'
+                            stroke-width="5"/>
+                            <path d='M0,14 30,14' stroke='rgb(231, 240, 241)'
+                            stroke-width="5"/>
+                            <path d='M0,23 30,23' stroke='rgb(231, 240, 241)'
+                            stroke-width="5"/>
+                        </svg>
+                    </a>
+                </span>
+            </div>  
+        <div id="dividendList"></div>
+        </div>
+        <div class="calender">
+            <div class="data" id="data">
+            </div>
+            <div class="months" id="monthBlocks"></div>
+        </div>    
+    </div>   
+    <div class="dividendSection">
+        <!-- <i id="targetArrow" class="arrow right"></i> -->
+        <div id="targets">
+            <h3 id="myTarget">My target</h3>
+            <input class="targetInput" id="targetMonth" type="text" placeholder="Set a month target">
+            <input class="targetInput" id="targetYear" type="text" placeholder="Set a yearly goal">
+            <h3 id="currentStatus">Percent of Target</h3>
+            <canvas id="targetChart"></canvas>
+            <h3 id="targetPoint"></h3>
+            
+        </div>
+        <div class="container">
+            <div class="cover"></div>
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="dividendAmounts">
+            <h3>Current Dividends</h3>
+            <h3 id="amountYear">Year</h3>
+            <h3 id="amountMonth">Month</h3>
+            <h3 id="amountDay">Day</h3>
+        </div>
+        
+    </div>
+    <script type="text/javascript" src="Chart.min.js"></script>
+</body>
+</html>
